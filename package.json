@@ -1,0 +1,34 @@
+{
+  "name": "datepress",
+  "version": "0.0.1",
+  "description": "date helpers to range, group, aggregate collections",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ansteh/datepress.git"
+  },
+  "keywords": [
+    "date",
+    "moment",
+    "range",
+    "group",
+    "aggregate",
+    "array"
+  ],
+  "author": "Andre Stehle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansteh/datepress/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.16.6",
+    "moment": "^2.16.0"
+  },
+  "devDependencies": {}
+}
