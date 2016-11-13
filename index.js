@@ -2,7 +2,7 @@
 const _       = require('lodash');
 const moment  = require('moment');
 
-const range = (start, end, delimiter, iteratee) => {
+const range = (start, end, delimiter, func) => {
   let step = moment(_.clone(start));
   let limit = moment(_.clone(end));
   let pool = [];
@@ -10,8 +10,8 @@ const range = (start, end, delimiter, iteratee) => {
 
   while(step.isSameOrBefore(limit)) {
     let value = _.clone(step.toDate());
-    if(iteratee) {
-      value = iteratee(value, index);
+    if(func) {
+      value = func(value, index);
     }
     pool.push(value);
 
@@ -26,6 +26,19 @@ const range = (start, end, delimiter, iteratee) => {
   return pool;
 };
 
+const groupBy = (collection, delimiter, access) => {
+  return _.groupBy(collection, (item) => {
+    let date = item;
+    if(_.isFunction(access)) {
+      date = access(item);
+    } else if(_.isString(access)) {
+      date =_.get(item, access);
+    }
+    return moment(date).get(delimiter);
+  });
+};
+
 module.exports = {
-  range: range
+  range: range,
+  groupBy: groupBy
 };

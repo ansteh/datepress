@@ -19,9 +19,15 @@ const datepress = require('datepress');
 const moment = require('moment');
 
 let start = new Date();
-let end = moment(start).add(5, 'days').toDate();
+let end = moment(start).add(10, 'days').toDate();
 let delimiter = 'days';
-console.log(datepress.range(start, end, delimiter));
+let dates = datepress.range(start, end, delimiter);
+console.log(dates);
+```
+
+## groupBy example
+```js
+console.log(datepress.groupBy(dates, 'days'));
 ```
 
 ## License
