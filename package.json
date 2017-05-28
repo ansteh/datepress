@@ -1,6 +1,6 @@
 {
   "name": "datepress",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "date helpers to range, group, aggregate collections",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,8 @@
     "url": "https://github.com/ansteh/datepress/issues"
   },
   "dependencies": {
-    "lodash": "^4.17.2",
-    "moment": "^2.16.0"
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
   },
   "devDependencies": {}
 }
