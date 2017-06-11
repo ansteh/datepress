@@ -102,6 +102,9 @@ DP.findIndex = function(collection, date, access) {
 
 DP.slice = function(collection, start, end, access) {
   var startIndex = DP.findIndex(collection, start, access);
+  if(startIndex === -1) {
+    return [];
+  }
   var endIndex = DP.findIndex(collection, end, access);
   if(endIndex === -1) endIndex = collection.length;
   // console.log(startIndex, endIndex);

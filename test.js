@@ -48,3 +48,17 @@ console.log('first month:', 10 === todayValue);
 
 let lastMonth = moment().startOf('month').subtract(10, 'day').toDate();
 console.log('last month value:', getCashflow(lastMonth), 5 === getCashflow(lastMonth));
+
+const testSliceEnd = (date = moment().endOf('year'), delimiter = 'month') => {
+  let start = moment(_.clone(date)).startOf(delimiter);
+  let end = moment(_.clone(date)).endOf(delimiter);
+
+  // console.log(start);
+  // console.log(end);
+
+  let sliced = DP.slice(collection, start, end, info => info.date);
+  // console.log(sliced);
+  console.log(sliced.length === 0);
+}
+
+testSliceEnd();
