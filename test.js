@@ -33,8 +33,8 @@ let getCashflow = (date, delimiter = 'month') => {
 
     let sliced = DP.slice(collection, start, end, info => info.date);
 
-    console.log(date, start, end, sliced);
-    
+    // console.log(date, start, end, sliced);
+
     return _
       .chain(sliced)
       .map('value')
@@ -64,15 +64,15 @@ const testSliceEnd = (date = moment().endOf('year'), delimiter = 'month') => {
 // testSliceEnd();
 
 const testDateRange = () => {
-  let start = moment().startOf('year').add(1, 'hours');
+  let start = moment().startOf('year');
   let end = moment().endOf('year');
-  // console.log('start', start);
-  // console.log('end', end);
+  console.log('start', start);
+  console.log('end', end);
 
   let range = DP.range(start, end, 'month');
-  // console.log(range);
-  // let sliced = DP.slice(collection, start, end, info => info.date);
-  // console.log(sliced);
+  console.log(range);
+  let sliced = DP.slice(collection, start, end, info => info.date);
+  console.log(sliced);
   _.forEach(range, (date) => {
     console.log(date, getCashflow(date));
   });
