@@ -1,6 +1,6 @@
 {
   "name": "datepress",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "date helpers to range, group, aggregate collections",
   "main": "index.js",
   "scripts": {
